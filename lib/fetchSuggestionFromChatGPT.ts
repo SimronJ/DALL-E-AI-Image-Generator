@@ -1,9 +1,22 @@
-console.log("getting suggestion");
-const fetchSuggestionFromChatGPT = () =>
-    fetch("/api/suggestion", {
-        cache: 'no-store'
-    }).then( (res) => res.json());
+import axios from 'axios';
+import { Console } from 'console';
 
-    console.log("got suggestion");
+const fetchSuggestionFromChatGPT = async () => {
+  try {
+    console.log("Getting a new suggestion")
+    const response = await axios.get('/api/suggestion', {
+      headers: {
+        'Cache-Control': 'no-store',
+      },
+    });
+
+    console.log(`Suggestion is ${response}`);
+
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
 
 export default fetchSuggestionFromChatGPT;

@@ -10,6 +10,7 @@ export async function GET(request: Request) {
   });
 
   const textData = await response.text();
+  console.log(textData);
 
   return new Response(JSON.stringify(textData.trim()), {
     status: 200,
