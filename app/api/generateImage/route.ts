@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
   console.log(apiUrl);
   const response = await fetch(
-    apiUrl,
+    "https://ron-ai-image-generator-app.azurewebsites.net/api/generateImage",
     {
       method: "POST",
       headers: {

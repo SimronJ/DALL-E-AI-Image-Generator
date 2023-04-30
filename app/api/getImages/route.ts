@@ -4,7 +4,7 @@ export async function GET(request: Request) {
     const apiUrl = `${baseUrl}/api/getImages`;
     console.log(apiUrl);
     const response = await fetch(
-      apiUrl,
+      "https://ron-ai-image-generator-app.azurewebsites.net/api/getImages",
       {
         mode: "no-cors",
         cache: "no-store",

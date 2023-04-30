@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   const apiUrl = `${baseUrl}/api/getChatGPTSuggestion`;
   console.log(apiUrl);
 
-  const response = await fetch(apiUrl, {
+  const response = await fetch("https://ron-ai-image-generator-app.azurewebsites.net/api/getChatGPTSuggestion", {
     cache: 'no-store'
   });
 
