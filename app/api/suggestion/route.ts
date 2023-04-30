@@ -13,5 +13,9 @@ export async function GET(request: Request) {
 
   return new Response(JSON.stringify(textData.trim()), {
     status: 200,
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+      'Expires': '0',
+    },
   });
 }
