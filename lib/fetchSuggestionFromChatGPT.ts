@@ -10,7 +10,7 @@ const fetchSuggestionFromChatGPT = async () => {
       },
     });
 
-    console.log(`Suggestion is ${response}`);
+    console.log(`Suggestion is ${response.data}`);
 
     return response.data;
   } catch (error) {
