@@ -20,7 +20,7 @@ const blobServiceClient = new BlobServiceClient(
 );
 
 app.http("getImages", {
-  methods: ["GET", "OPTIONS"],
+  methods: ["GET"],
   authLevel: "anonymous",
   handler: async (request, context) => {
     const containerClient = blobServiceClient.getContainerClient(containerName);
@@ -50,16 +50,4 @@ app.http("getImages", {
       },
     };
   },
-  options: async (request, context) => {
-    // Enable CORS for preflight requests
-    context.res = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers":
-          "Content-Type, Authorization, X-Requested-With",
-      },
-    };
-  },
-
 });

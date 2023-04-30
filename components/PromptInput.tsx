@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import fetchSuggestionFromChatGPT from "@/lib/fetchSuggestionFromChatGPT";
-import fetchImages from "../lib/fetchImages";
 import { FormEvent, useState } from "react";
 import useSWR from "swr";
+import fetchImages from "../lib/fetchImages";
+import fetchSuggestionFromChatGPT from "../lib/fetchSuggestionFromChatGPT";
 import toast from "react-hot-toast";
 
 function PromptInput() {
@@ -67,8 +67,7 @@ function PromptInput() {
         await submitPrompt();
     };
 
-
-    const loading = isLoading || isValidating;
+    const loading = isValidating || isLoading;
 
     return (
         <div className="m-10">
@@ -125,4 +124,4 @@ function PromptInput() {
     );
 }
 
-export default PromptInput
+export default PromptInput;

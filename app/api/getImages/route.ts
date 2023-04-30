@@ -6,7 +6,6 @@ export async function GET(request: Request) {
     const response = await fetch(
       "https://ron-ai-image-generator-app.azurewebsites.net/api/getImages",
       {
-        mode: "no-cors",
         cache: "no-store",
       }
     );
