@@ -1,4 +1,4 @@
-
+"use client";
 export async function GET(request: Request) {
   const isLocalhost = process.env.NODE_ENV === 'development';
   const baseUrl = isLocalhost ? 'http://localhost:7071' : 'https://ron-ai-image-generator-app.azurewebsites.net';
