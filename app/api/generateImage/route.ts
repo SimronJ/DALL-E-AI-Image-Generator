@@ -8,6 +8,7 @@ export async function POST(request: Request) {
   const baseUrl = isLocalhost ? 'http://localhost:7071' : 'https://ron-ai-image-generator-app.azurewebsites.net';
   const apiUrl = `${baseUrl}/api/generateImage`;
 
+  console.log(apiUrl);
   const response = await fetch(
     apiUrl,
     {
