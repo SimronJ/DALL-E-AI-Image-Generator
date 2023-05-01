@@ -28,7 +28,7 @@ function PromptInput() {
         setInput("");
 
         const notificationPrompt = inputPrompt || suggestion;
-        const notificationPromptShort = notificationPrompt.slice(0, 20);
+        const notificationPromptShort = notificationPrompt!.slice(0, 20);
 
         const notification = toast.loading(
             `DALL·E is creating: ${notificationPromptShort}...`
@@ -87,8 +87,8 @@ function PromptInput() {
                 />
                 <button
                     className={`p-4 ${input
-                            ? "bg-violet-500 text-white transition-colors duration-200"
-                            : "text-gray-300 cursor-not-allowed"
+                        ? "bg-violet-500 text-white transition-colors duration-200"
+                        : "text-gray-300 cursor-not-allowed"
                         } font-bold`}
                     type="submit"
                     disabled={!input}
@@ -105,6 +105,7 @@ function PromptInput() {
                 </button>
                 <button
                     className={`p-4 bg-white text-violet-500 border-none transition-colors duration-200 rounded-b-md md:rounded-r-md md:rounded-bl-none font-bold`}
+                    // @ts-ignore
                     onClick={mutate}
                     type="button"
                 >
