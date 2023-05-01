@@ -1,22 +1,23 @@
-import axios from 'axios';
-import { Console } from 'console';
-
-const fetchSuggestionFromChatGPT = async () => {
+export const fetchSuggestionFromChatGPT = async () => {
   try {
-    console.log("Getting a new suggestion")
-    const response = await axios.get('/api/suggestion', {
-      headers: {
-        'Cache-Control': 'no-store',
-      },
+    const isLocalhost = process.env.NODE_ENV === 'development';
+    const baseUrl = isLocalhost ? 'http://localhost:7071' : 'https://ron-ai-image-generator-app.azurewebsites.net';
+    const apiUrl = `${baseUrl}/api/getChatGPTSuggestion?timestamp=${new Date().getTime()}`;
+    console.log(apiUrl);
+
+    const response = await fetch("https://ron-ai-image-generator-app.azurewebsites.net/api/getChatGPTSuggestion", {
+      cache: 'no-store'
     });
 
-    console.log(`Suggestion is ${response.data}`);
+    const textData = (await response.text()).trim();
+    console.log(textData);
 
-    return response.data;
+    return textData;
   } catch (error) {
     console.error(error);
     return null;
   }
 };
+
 
 export default fetchSuggestionFromChatGPT;
