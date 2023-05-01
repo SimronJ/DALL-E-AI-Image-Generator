@@ -5,6 +5,7 @@ module.exports = {
     appDir: true,
   },
   images: {
+    unoptimized: true,
     domains: [
       "ronaiimagegeneratoeb550e.blob.core.windows.net",
       "links.papareact.com",
