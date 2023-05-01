@@ -60,6 +60,7 @@ function Images() {
                             height={800}
                             width={800}
                             className="w-full rounded-sm shadow-2xl drop-shadow-lg -z-10"
+                            unoptimized
                         />
                     </div>
                 ))}
