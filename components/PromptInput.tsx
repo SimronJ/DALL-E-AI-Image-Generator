@@ -87,7 +87,7 @@ function PromptInput() {
                 />
                 <button
                     className={`p-4 ${input
-                        ? "bg-violet-500 text-white transition-colors duration-200"
+                        ? "bg-green-500 text-white transition-colors duration-200"
                         : "text-gray-300 cursor-not-allowed"
                         } font-bold`}
                     type="submit"
@@ -96,7 +96,7 @@ function PromptInput() {
                     Generate
                 </button>
                 <button
-                    className={`p-4 bg-violet-400 text-white transition-colors duration-200 font-bold disabled:text-gray-300 disabled:cursor-not-allowed disabled:bg-gray-400`}
+                    className={`p-4 bg-green-400 text-white transition-colors duration-200 font-bold disabled:text-gray-300 disabled:cursor-not-allowed disabled:bg-gray-400`}
                     onClick={() => submitPrompt(true)}
                     disabled={isLoading || isValidating}
                     type="button"
@@ -104,7 +104,7 @@ function PromptInput() {
                     Use Suggestion
                 </button>
                 <button
-                    className={`p-4 bg-white text-violet-500 border-none transition-colors duration-200 rounded-b-md md:rounded-r-md md:rounded-bl-none font-bold`}
+                    className={`p-4 bg-white text-green-500 border-none transition-colors duration-200 rounded-b-md md:rounded-r-md md:rounded-bl-none font-bold`}
                     // @ts-ignore
                     onClick={mutate}
                     type="button"
@@ -116,7 +116,7 @@ function PromptInput() {
             {input && (
                 <p className="italic pt-2 pl-2 font-light">
                     Suggestion:{" "}
-                    <span className="text-violet-500">
+                    <span className="text-green-500">
                         {loading ? "ChatGPT is thinking..." : suggestion}
                     </span>
                 </p>
